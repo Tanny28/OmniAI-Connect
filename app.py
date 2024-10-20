@@ -42,14 +42,14 @@ st.header("1. Professional AI Tools")
 professional_tools = [
     ("Timely", "https://timelyapp.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/timely.png", "Automatic time tracking software powered by AI."),
     ("Tetra", "https://www.tetra.ai/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/tetra.png", "An AI that takes notes during your calls and meetings."),
-    ("Clockk", "https://www.clockk.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/clockk.png", "AI-based time management for freelancers and agencies."),
-    ("Spoke", "https://www.askspoke.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/spoke.png", "AI-driven knowledge management for teams."),
+    ("Clockk", "https://www.clockk.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Clockk.png", "AI-based time management for freelancers and agencies."),
+    ("Spoke", "https://www.askspoke.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Spoke.png", "AI-driven knowledge management for teams."),
     ("Receptiviti", "https://www.receptiviti.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/receptiviti.png", "AI-based emotional intelligence insights from conversations."),
-    ("Flowrite", "https://www.flowrite.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/flowrite.png", "AI writing assistant for business emails and professional writing."),
-    ("Aider", "https://www.aider.ai/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/aider.png", "AI-driven virtual assistant for accountants."),
-    ("Gong.io", "https://www.gong.io/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/gongio.png", "AI-based sales analytics and coaching."),
-    ("Textio", "https://textio.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/textio.png", "AI-enhanced writing for HR and recruitment."),
-    ("WorkFusion", "https://www.workfusion.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/workfusion.png", "AI-powered digital workforce for repetitive office tasks."),
+    ("Flowrite", "https://www.flowrite.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Flowrite.png", "AI writing assistant for business emails and professional writing."),
+    ("Aider", "https://www.aider.ai/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Aider.png", "AI-driven virtual assistant for accountants."),
+    ("Gong.io", "https://www.gong.io/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Gongio.png", "AI-based sales analytics and coaching."),
+    ("Textio", "https://textio.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Textio.png", "AI-enhanced writing for HR and recruitment."),
+    ("WorkFusion", "https://www.workfusion.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/WorkFusion.png", "AI-powered digital workforce for repetitive office tasks."),
 ]
 
 # Display professional tools with interactive icons
