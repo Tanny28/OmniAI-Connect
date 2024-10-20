@@ -59,16 +59,16 @@ for name, url, icon_url, description in professional_tools:
 # Task Management AI Tools
 st.header("2. Task Management AI Tools")
 task_management_tools = [
-    ("ClickUp AI", "https://clickup.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/clickup.jpg", "AI-powered project management with task automation."),
-    ("Krisp", "https://krisp.ai/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/krisp.jpg", "AI noise-cancelling for online meetings."),
-    ("Superpowered", "https://www.superpowered.me/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/superpowered.jpg", "AI that helps to block distractions and focus."),
-    ("TimeHero", "https://www.timehero.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/timehero.jpg", "AI task automation and time management tool."),
-    ("Nanonets", "https://nanonets.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/nanonets.jpg", "AI for automating workflows with document recognition."),
-    ("Taskade", "https://www.taskade.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/taskade.jpg", "AI-assisted task manager with collaboration features."),
-    ("Notion AI", "https://www.notion.so/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/notion.jpg", "AI-enhanced note-taking and project management."),
-    ("Omniflow", "https://omniflow.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/omniflow.jpg", "AI-powered assistant to manage tasks and emails."),
-    ("Motion", "https://www.usemotion.io/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/motion.jpg", "AI-based time planner and task manager."),
-    ("Friday", "https://www.friday.app/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/friday.jpg", "AI assistant for team task tracking and goal setting."),
+    ("ClickUp AI", "https://clickup.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/clickup.png", "AI-powered project management with task automation."),
+    ("Krisp", "https://krisp.ai/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/krisp.png", "AI noise-cancelling for online meetings."),
+    ("Superpowered", "https://www.superpowered.me/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/superpowered.png", "AI that helps to block distractions and focus."),
+    ("TimeHero", "https://www.timehero.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/timehero.png", "AI task automation and time management tool."),
+    ("Nanonets", "https://nanonets.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/nanonets.png", "AI for automating workflows with document recognition."),
+    ("Taskade", "https://www.taskade.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/taskade.png", "AI-assisted task manager with collaboration features."),
+    ("Notion AI", "https://www.notion.so/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/notion.png", "AI-enhanced note-taking and project management."),
+    ("Omniflow", "https://omniflow.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/omniflow.png", "AI-powered assistant to manage tasks and emails."),
+    ("Motion", "https://www.usemotion.io/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/motion.png", "AI-based time planner and task manager."),
+    ("Friday", "https://www.friday.app/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/friday.png", "AI assistant for team task tracking and goal setting."),
 ]
 
 # Display task management tools with interactive icons
