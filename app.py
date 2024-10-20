@@ -47,7 +47,7 @@ professional_tools = [
     ("Receptiviti", "https://www.receptiviti.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/receptiviti.png", "AI-based emotional intelligence insights from conversations."),
     ("Flowrite", "https://www.flowrite.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Flowrite.png", "AI writing assistant for business emails and professional writing."),
     ("Aider", "https://www.aider.ai/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Aider.png", "AI-driven virtual assistant for accountants."),
-    ("Gong.io", "https://www.gong.io/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Gongio.png", "AI-based sales analytics and coaching."),
+    ("Gong.io", "https://www.gong.io/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Gong.io.png", "AI-based sales analytics and coaching."),
     ("Textio", "https://textio.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Textio.png", "AI-enhanced writing for HR and recruitment."),
     ("WorkFusion", "https://www.workfusion.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/WorkFusion.png", "AI-powered digital workforce for repetitive office tasks."),
 ]
