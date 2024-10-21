@@ -37,6 +37,10 @@ with header_container:
     if st.button("Voice Assist"):
         st.write("Voice assist functionality is not yet implemented.")  # Voice assist placeholder
 
+# Function to filter tools based on the search query
+def filter_tools(tools, query):
+    return [tool for tool in tools if query.lower() in tool[0].lower()]
+
 # Main content: Professional AI Tools
 st.header("1. Professional AI Tools")
 professional_tools = [
@@ -52,8 +56,13 @@ professional_tools = [
     ("WorkFusion", "https://www.workfusion.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/WorkFusion.png", "AI-powered digital workforce for repetitive office tasks."),
 ]
 
-# Display professional tools with interactive icons
-for name, url, icon_url, description in professional_tools:
+# Filter and display professional tools based on search
+if search_query:
+    filtered_professional_tools = filter_tools(professional_tools, search_query)
+else:
+    filtered_professional_tools = professional_tools
+
+for name, url, icon_url, description in filtered_professional_tools:
     st.markdown(create_icon_link(name, url, icon_url, description), unsafe_allow_html=True)
 
 # Task Management AI Tools
@@ -71,8 +80,13 @@ task_management_tools = [
     ("Friday", "https://www.friday.app/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/friday.png", "AI assistant for team task tracking and goal setting."),
 ]
 
-# Display task management tools with interactive icons
-for name, url, icon_url, description in task_management_tools:
+# Filter and display task management tools based on search
+if search_query:
+    filtered_task_management_tools = filter_tools(task_management_tools, search_query)
+else:
+    filtered_task_management_tools = task_management_tools
+
+for name, url, icon_url, description in filtered_task_management_tools:
     st.markdown(create_icon_link(name, url, icon_url, description), unsafe_allow_html=True)
 
 # Footer container with "About Us" and "Contact" information
