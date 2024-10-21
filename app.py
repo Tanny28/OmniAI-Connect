@@ -1,4 +1,6 @@
 import streamlit as st
+import speech_recognition as sr
+import threading
 
 # Function to create an icon link
 def create_icon_link(name, url, icon_url, description):
@@ -34,8 +36,54 @@ with header_container:
     """, unsafe_allow_html=True)
     
     search_query = st.text_input("Search by AI tool or category")  # Search input field
+
     if st.button("Voice Assist"):
-        st.write("Voice assist functionality is not yet implemented.")  # Voice assist placeholder
+        st.write("Listening for your command...")  # Indicate that voice recognition is starting
+        threading.Thread(target=recognize_speech).start()  # Run speech recognition in a separate thread
+
+# Function to recognize speech
+def recognize_speech():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        r.adjust_for_ambient_noise(source)  # Adjust for ambient noise
+        audio = r.listen(source)  # Listen for audio input
+
+    try:
+        command = r.recognize_google(audio)  # Convert audio to text
+        st.success(f"You said: {command}")  # Display the recognized command
+        process_command(command)  # Process the recognized command
+    except sr.UnknownValueError:
+        st.error("Could not understand audio.")
+    except sr.RequestError as e:
+        st.error(f"Could not request results from Google Speech Recognition service; {e}")
+
+# Function to process the recognized command
+def process_command(command):
+    # Normalize command text for searching
+    command = command.lower()
+    
+    # Check for category commands
+    if "time management" in command:
+        category = "Time Management"
+        filtered_tools = filter_tools(professional_tools + task_management_tools, category)
+        display_tools(filtered_tools)
+    elif "open" in command:
+        # Open specific tool based on the command
+        tool_name = command.replace("open ", "").strip()
+        open_tool(tool_name)
+    else:
+        st.warning("Please specify a valid category or tool to open.")
+
+# Function to open the specified tool
+def open_tool(tool_name):
+    all_tools = professional_tools + task_management_tools
+    for name, url, _, _ in all_tools:
+        if tool_name.lower() in name.lower():
+            st.write(f"Opening {name}...")
+            js = f"window.open('{url}', '_blank');"
+            st.components.v1.html(f"<script>{js}</script>", height=0)
+            return
+    st.error("Tool not found.")
 
 # Function to filter tools based on the search query (searches both name and category)
 def filter_tools(tools, query):
@@ -76,8 +124,8 @@ task_management_tools = [
     ("Taskade", "https://www.taskade.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/taskade.png", "Task Manager, Collaboration"),
     ("Notion AI", "https://www.notion.so/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/notion.png", "Note-taking, Project Management"),
     ("Omniflow", "https://omniflow.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/omniflow.png", "Task and Email Management"),
-    ("Motion", "https://www.usemotion.io/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/motion.png", "Time Planner, Task Management"),
-    ("Friday", "https://www.friday.app/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/friday.png", "Task Tracking, Goal Setting"),
+    ("Motion", "https://www.usemotion.io/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/motion.png", "Time Planner, Task Manager"),
+    ("Friday", "https://www.friday.app/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/friday.png", "Team Task Tracking"),
 ]
 
 # Filter and display task management tools based on search
@@ -89,12 +137,9 @@ else:
 for name, url, icon_url, category in filtered_task_management_tools:
     st.markdown(create_icon_link(name, url, icon_url, f"Category: {category}"), unsafe_allow_html=True)
 
-# Footer container with "About Us" and "Contact" information
-footer_container = st.container()
-
-with footer_container:
-    col1, col2 = st.columns([1, 1])
-    with col1:
-        st.text("ABOUT US")
-    with col2:
-        st.text("CONTACT")
+# Footer section
+st.markdown("""
+    <footer style="text-align: center; margin-top: 40px;">
+        <p>© 2024 OMNIAI Connect. All rights reserved.</p>
+    </footer>
+""", unsafe_allow_html=True)
