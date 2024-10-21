@@ -1,4 +1,3 @@
 streamlit
-streamlit
 SpeechRecognition==3.9.0
 PyAudio==0.2.13  # Only if you need to install PyAudio separately (for microphone input)
