@@ -33,74 +33,61 @@ with header_container:
         <a href="https://www.canva.com/design/DAGUIKuxKWQ/4ieiuxWMEWG164U4N80sNw/view?utm_content=DAGUIKuxKWQ&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"></a>
     """, unsafe_allow_html=True)
     
-    search_query = st.text_input("Search for AI tools...")  # Search input field
+    search_query = st.text_input("Search")  # Search input field
     if st.button("Voice Assist"):
         st.write("Voice assist functionality is not yet implemented.")  # Voice assist placeholder
 
-# AI tools categorized by type
-categories = {
-    "note_making": [
-        ("Tetra", "https://www.tetra.ai/", "https://example.com/tetra.png", "AI for note-taking during calls and meetings."),
-        ("Notion AI", "https://www.notion.so/", "https://example.com/notion.png", "AI-enhanced note-taking and project management."),
-        ("Evernote", "https://www.evernote.com/", "https://example.com/evernote.png", "Note-taking app with AI features for organization."),
-        ("Roam Research", "https://roamresearch.com/", "https://example.com/roam.png", "AI-driven note-making and knowledge management.")
-    ],
-    "task_management": [
-        ("ClickUp AI", "https://clickup.com/", "https://example.com/clickup.png", "AI-powered project management with task automation."),
-        ("Omniflow", "https://omniflow.com/", "https://example.com/omniflow.png", "AI-powered assistant to manage tasks and emails."),
-        ("Motion", "https://www.usemotion.io/", "https://example.com/motion.png", "AI-based time planner and task manager."),
-        ("TimeHero", "https://www.timehero.com/", "https://example.com/timehero.png", "AI task automation and time management tool.")
-    ],
-    "meeting_scheduling": [
-        ("Clara", "https://www.clara.com/", "https://example.com/clara.png", "AI-powered meeting scheduler."),
-        ("X.ai", "https://x.ai/", "https://example.com/xai.png", "AI assistant for scheduling meetings."),
-        ("CalendarHero", "https://calendarhero.com/", "https://example.com/calendarhero.png", "AI meeting scheduling and calendar management."),
-        ("Spoke", "https://www.askspoke.com/", "https://example.com/spoke.png", "AI for meeting coordination and task assignment.")
-    ]
-}
+# Function to filter tools based on the search query
+def filter_tools(tools, query):
+    return [tool for tool in tools if query.lower() in tool[0].lower()]
 
-# Keywords to match user intent
-keywords_mapping = {
-    "notes": "note_making",
-    "make notes": "note_making",
-    "note taking": "note_making",
-    "task assist": "task_management",
-    "task management": "task_management",
-    "manage tasks": "task_management",
-    "schedule meeting": "meeting_scheduling",
-    "book meeting": "meeting_scheduling",
-    "meeting assist": "meeting_scheduling"
-}
+# Main content: Professional AI Tools
+st.header("1. Professional AI Tools")
+professional_tools = [
+    ("Timely", "https://timelyapp.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/timely.png", "Automatic time tracking software powered by AI."),
+    ("Tetra", "https://www.tetra.ai/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/tetra.png", "An AI that takes notes during your calls and meetings."),
+    ("Clockk", "https://www.clockk.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Clockk.png", "AI-based time management for freelancers and agencies."),
+    ("Spoke", "https://www.askspoke.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Spoke.png", "AI-driven knowledge management for teams."),
+    ("Receptiviti", "https://www.receptiviti.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/receptiviti.png", "AI-based emotional intelligence insights from conversations."),
+    ("Flowrite", "https://www.flowrite.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Flowrite.png", "AI writing assistant for business emails and professional writing."),
+    ("Aider", "https://www.aider.ai/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Aider.png", "AI-driven virtual assistant for accountants."),
+    ("Gong.io", "https://www.gong.io/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Gong.io.png", "AI-based sales analytics and coaching."),
+    ("Textio", "https://textio.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/Textio.png", "AI-enhanced writing for HR and recruitment."),
+    ("WorkFusion", "https://www.workfusion.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/WorkFusion.png", "AI-powered digital workforce for repetitive office tasks."),
+]
 
-# Function to filter tools based on the search query and keywords
-def filter_tools(query):
-    query = query.lower()
-    # First, check if the query matches any specific AI tool name
-    for category in categories.values():
-        for tool in category:
-            if tool[0].lower() in query:
-                return [tool]  # Return the matching tool
-    
-    # Otherwise, match the query against keywords to find relevant categories
-    for keyword, category in keywords_mapping.items():
-        if keyword in query:
-            return categories[category]
-    
-    return []
-
-# Main content: Filter and display tools based on the search query
-st.header("AI Tool Suggestions")
-
+# Filter and display professional tools based on search
 if search_query:
-    filtered_tools = filter_tools(search_query)
-    if not filtered_tools:
-        st.write("No matching tools found for your search.")
-    else:
-        for name, url, icon_url, description in filtered_tools:
-            st.markdown(create_icon_link(name, url, icon_url, description), unsafe_allow_html=True)
+    filtered_professional_tools = filter_tools(professional_tools, search_query)
 else:
-    # Show default content or categories
-    st.write("Enter a search query, such as 'I want to make notes' or 'I want a task assist' to get AI tool suggestions.")
+    filtered_professional_tools = professional_tools
+
+for name, url, icon_url, description in filtered_professional_tools:
+    st.markdown(create_icon_link(name, url, icon_url, description), unsafe_allow_html=True)
+
+# Task Management AI Tools
+st.header("2. Task Management AI Tools")
+task_management_tools = [
+    ("ClickUp AI", "https://clickup.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/clickup.png", "AI-powered project management with task automation."),
+    ("Krisp", "https://krisp.ai/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/krisp.png", "AI noise-cancelling for online meetings."),
+    ("Superpowered", "https://www.superpowered.me/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/superpowered.png", "AI that helps to block distractions and focus."),
+    ("TimeHero", "https://www.timehero.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/timehero.png", "AI task automation and time management tool."),
+    ("Nanonets", "https://nanonets.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/nanonets.png", "AI for automating workflows with document recognition."),
+    ("Taskade", "https://www.taskade.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/taskade.png", "AI-assisted task manager with collaboration features."),
+    ("Notion AI", "https://www.notion.so/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/notion.png", "AI-enhanced note-taking and project management."),
+    ("Omniflow", "https://omniflow.com/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/omniflow.png", "AI-powered assistant to manage tasks and emails."),
+    ("Motion", "https://www.usemotion.io/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/motion.png", "AI-based time planner and task manager."),
+    ("Friday", "https://www.friday.app/", "https://raw.githubusercontent.com/Tanny28/OmniAi-Connect/main/friday.png", "AI assistant for team task tracking and goal setting."),
+]
+
+# Filter and display task management tools based on search
+if search_query:
+    filtered_task_management_tools = filter_tools(task_management_tools, search_query)
+else:
+    filtered_task_management_tools = task_management_tools
+
+for name, url, icon_url, description in filtered_task_management_tools:
+    st.markdown(create_icon_link(name, url, icon_url, description), unsafe_allow_html=True)
 
 # Footer container with "About Us" and "Contact" information
 footer_container = st.container()
